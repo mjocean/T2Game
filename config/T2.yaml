@@ -25,20 +25,20 @@ PRSwitches:
     flipperLwR:
         number: S11
         ballsearch: stop # stop: this switch prevents the ballsearch timer from even starting
-    flipperLwL: 
+    flipperLwL:
         number: S12
-        ballsearch: stop 
+        ballsearch: stop
     coinL:
         number: SD1
     coinR:
         number: SD3
-    exit: 
+    exit:
         number: SD5
-    down: 
+    down:
         number: SD6
-    up: 
+    up:
         number: SD7
-    enter: 
+    enter:
         number: SD8
     startButton:
         number: S13
@@ -49,13 +49,13 @@ PRSwitches:
         ballsearch: reset # reset: this switch resets a ballsearch timer to occur X-seconds after this was seen
     trough2:
         number: S16
-        ballsearch: reset 
+        ballsearch: reset
     trough3:
         number: S17
-        ballsearch: reset 
+        ballsearch: reset
     outhole:
         number: S18
-        ballsearch: reset 
+        ballsearch: reset
     slamTilt:
         number: S21
     coinDoor:
@@ -64,19 +64,19 @@ PRSwitches:
         number: S23
     outlaneL:
         number: S25
-        ballsearch: reset 
+        ballsearch: reset
     inlaneL:
         number: S26
-        ballsearch: reset 
+        ballsearch: reset
     inlaneR:
-        number: S27        
-        ballsearch: reset 
+        number: S27
+        ballsearch: reset
     outlaneR:
         number: S28
-        ballsearch: reset 
-    gunLoaded: 
+        ballsearch: reset
+    gunLoaded:
         number: S31
-        ballsearch: stop 
+        ballsearch: stop
     gunMark:
         number: S32
         type: NC
@@ -84,110 +84,110 @@ PRSwitches:
         number: S33
     gripTrigger:
         number: S34
-    standupMidL: 
+    standupMidL:
         number: S36
-        ballsearch: reset 
-    standupMidC: 
+        ballsearch: reset
+    standupMidC:
         number: S37
-        ballsearch: reset 
-    standupMidR: 
+        ballsearch: reset
+    standupMidR:
         number: S38
-        ballsearch: reset 
+        ballsearch: reset
     jetL:
         number: S41
-        ballsearch: reset 
+        ballsearch: reset
     jetR:
         number: S42
-        ballsearch: reset 
+        ballsearch: reset
     jetB:
         number: S43
-        ballsearch: reset 
+        ballsearch: reset
     slingL:
         number: S44
-        ballsearch: reset 
+        ballsearch: reset
     slingR:
         number: S45
-        ballsearch: reset 
-    standupRightT: 
+        ballsearch: reset
+    standupRightT:
         number: S46
-        ballsearch: reset 
-    standupRightM: 
+        ballsearch: reset
+    standupRightM:
         number: S47
-        ballsearch: reset 
-    standupRightB: 
+        ballsearch: reset
+    standupRightB:
         number: S48
-        ballsearch: reset 
+        ballsearch: reset
     lockLeft:
         number: S51
         ballsearch: stop
     escapeL:
         number: S53
-        ballsearch: reset 
+        ballsearch: reset
     escapeH:
         number: S54
-        ballsearch: reset 
+        ballsearch: reset
     lockTop:
         number: S55
         ballsearch: stop
     laneL:
         number: S56
-        ballsearch: reset 
+        ballsearch: reset
     laneC:
         number: S57
-        ballsearch: reset 
+        ballsearch: reset
     laneR:
         number: S58
-        ballsearch: reset 
+        ballsearch: reset
     rampLeftEnter:
         number: S61
-        ballsearch: reset 
+        ballsearch: reset
     rampLeftMade:
-        number: S62        
-        ballsearch: reset 
+        number: S62
+        ballsearch: reset
     rampRightEnter:
         number: S63
-        ballsearch: reset 
+        ballsearch: reset
     rampRightMade:
         number: S64
-        ballsearch: reset 
+        ballsearch: reset
     chaseLoopLow:
         number: S65
-        ballsearch: reset 
+        ballsearch: reset
     chaseLoopHigh:
         number: S66
-        ballsearch: reset 
+        ballsearch: reset
     target1:
         number: S71
-        ballsearch: reset 
+        ballsearch: reset
     target2:
         number: S72
-        ballsearch: reset 
+        ballsearch: reset
     target3:
         number: S73
-        ballsearch: reset 
+        ballsearch: reset
     target4:
         number: S74
-        ballsearch: reset 
+        ballsearch: reset
     target5:
         number: S75
-        ballsearch: reset 
+        ballsearch: reset
     ballPopper:
         number: S76
-        ballsearch: stop 
+        ballsearch: stop
     dropTarget:
         number: S77
-        ballsearch: reset 
+        ballsearch: reset
     shooter:
         number: S78
         ballsearch: stop, reset
 PRCoils:
-    flipperLwRMain: 
+    flipperLwRMain:
         number: FLRM
-    flipperLwRHold: 
+    flipperLwRHold:
         number: FLRH
-    flipperLwLMain: 
+    flipperLwLMain:
         number: FLLM
-    flipperLwLHold: 
+    flipperLwLHold:
         number: FLLH
     flipperEnable:
         number: G08
@@ -198,7 +198,7 @@ PRCoils:
     outhole:
         number: C03
         pulseTime: 30
-        ballsearch: True 
+        ballsearch: True
         # coils tagged for ballsearch are fired when the ball has not been
         # seen or at the start of the game when all balls can't be found
         # so these coils are coils that help return the ball to the trough
@@ -218,6 +218,8 @@ PRCoils:
     plunger:
         number: C09
         tags: autoPlunger # add this tag to support autoplunging on ball save
+        ballsearch: True # fire the plunger if we can't find a ball; a game won't start if the trough isn't full
+        # and the shooter-lane switch will prevent a "missing ball" search under normal circumstances
     lockTop:
         number: C10
         ballsearch: True
